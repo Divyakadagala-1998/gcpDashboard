@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/greenSwitch")
+@RequestMapping("/greenSwitch")
 
 public class GreenSwitchController {
     private final GreenSwitchService greenSwitchService;
@@ -24,10 +24,10 @@ public class GreenSwitchController {
     }*/
 
     // API to delete an instance
-    @DeleteMapping("/instance/{projectId}/{zone}/{instanceName}")
-    public void deleteInstance(@PathVariable String projectId,
+    @DeleteMapping("/projects/{projectId}/zones/{zone}/instances/{instanceName}")
+    public String deleteInstance(@PathVariable String projectId,
                                  @PathVariable String zone,
                                  @PathVariable String instanceName) throws Exception{
-         greenSwitchService.deleteInstance(projectId, zone, instanceName);
+         return greenSwitchService.deleteInstance(projectId, zone, instanceName);
     }
 }

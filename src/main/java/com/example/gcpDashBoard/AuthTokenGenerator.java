@@ -24,7 +24,6 @@ public class AuthTokenGenerator{
                 InputStream inputStream = resource.getInputStream();
 
                 //FileInputStream serviceAccountStream = new FileInputStream();
-
                 // Authenticate using GoogleCredentials
                 GoogleCredentials credentials = GoogleCredentials.fromStream(inputStream)
                         .createScoped(Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));

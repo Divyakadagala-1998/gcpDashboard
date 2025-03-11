@@ -9,7 +9,8 @@ import java.io.IOException;
 
 @Service
 public class GreenSwitchService {
-    public void deleteInstance(String projectId, String zone, String instanceName) throws Exception{
-        GetGreenSwitchApi.deleteInstance(projectId,zone,instanceName);
+    public String deleteInstance(String projectId, String zone, String instanceName) throws Exception{
+        return GetGreenSwitchApi.deleteInstance(projectId,zone,instanceName);
+
     }
 }
